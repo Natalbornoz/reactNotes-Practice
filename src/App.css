@@ -21,7 +21,7 @@ body {
 }
 
 .notesHeader {
-    font-family: 'Lobster', cursive;
+    font-family: sans-serif;
 }
 
 .notesBody {
@@ -33,4 +33,17 @@ body {
     position: ;
     left: 0;
     width: 100%;
+}
+
+.navbar {
+    background-color: black;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+.navbar-brand {
+    text-decoration: none;
+    color: #FFF;
+    padding: 0.5em;
+    text-align: left;
 }

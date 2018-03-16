@@ -9,7 +9,10 @@ import Note from './Note/Note';
 import NoteForm from './NoteForm/NoteForm';
 import ProductList from './component/ProductList';
 import ShoppingCart from './component/ShoppingCart';
+import Navbar from './Navbar';
+import Footer from './Footer';
 import './App.css';
+
 
 
 class App extends Component {
@@ -87,6 +90,7 @@ class App extends Component {
     return (
       // Nombre contenedor de todo el proyecto y las secciones del sitio
     <div className="contenedor">
+      <Navbar></Navbar>
       <div className="poleras">
         <Grid>
           <Row>
@@ -127,6 +131,36 @@ class App extends Component {
               <NoteForm addNote={this.addNote}/>
             </div>
         </div>
+      <div className="notesContainer">
+          
+          <div className="notesHeader">
+            <h3>Nos interesa tu opinión</h3>
+            <h4>Déjanos tus comentarios</h4>
+          </div>
+          {/* Cuerpo de la aplicacion */}
+          <div className="notesBody">
+            {/* Desde el inicial , quiero recorrer las notas a traves de map */}
+            <ul>
+            {
+              this.state.notes.map(note => {
+                return (
+                  <Note
+                    noteContent ={note.noteContent}
+                    noteId={note.noteId}
+                    key={note.noteId}
+                    removeNote={this.removeNote}
+                  />
+                )
+              })
+            }
+            </ul> 
+          </div>
+
+          {/* Acá irá el formulario */}
+          <div className="notesFooter">
+            <NoteForm addNote={this.addNote}/>
+            <Footer></Footer>
+          </div>
       </div>
     );
   }
