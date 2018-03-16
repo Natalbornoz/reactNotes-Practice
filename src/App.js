@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 
-=======
->>>>>>> origin
 //para conectar con base de  datos de firebase
 import firebase from 'firebase';
 import { Grid, Row, Col } from 'react-bootstrap';
@@ -11,23 +8,15 @@ import 'firebase/database';
 
 import Note from './Note/Note';
 import NoteForm from './NoteForm/NoteForm';
-<<<<<<< HEAD
 
-=======
->>>>>>> origin
 import ProductList from './component/ProductList';
 import ShoppingCart from './component/ShoppingCart';
 import Navbar from './Navbar';
 import Footer from './Footer';
-<<<<<<< HEAD
 
 import './App.css';
 
-=======
-import './App.css';
 
-
->>>>>>> origin
 
 class App extends Component {
 
@@ -103,14 +92,9 @@ class App extends Component {
   render() {
     return (
       // Nombre contenedor de todo el proyecto y las secciones del sitio
-<<<<<<< HEAD
 
     <div className="contenedor">
-    <Navbar></Navbar>
-=======
-    <div className="contenedor">
       <Navbar></Navbar>
->>>>>>> origin
       <div className="poleras">
         <Grid>
           <Row>
@@ -124,39 +108,6 @@ class App extends Component {
         </Grid> 
       </div> 
         <div className="notesContainer">
-<<<<<<< HEAD
-                    
-=======
-          
-            <div className="notesHeader">
-              <h1>Comentarios</h1>
-            </div>
-            {/* Cuerpo de la aplicacion */}
-            <div className="notesBody">
-              {/* Desde el inicial , quiero recorrer las notas a traves de map */}
-              <ul>
-            
-              {this.state.notes.map(note => {
-                  return (
-                    <Note
-                      noteContent ={note.noteContent}
-                      noteId={note.noteId}
-                      key={note.noteId}
-                      removeNote={this.removeNote}
-                    />
-                  )
-                })
-              }
-              </ul> 
-            </div>
-            {/* Acá irá el formulario */}
-            <div className="notesFooter">
-              <NoteForm addNote={this.addNote}/>
-            </div>
-        </div>
-      <div className="notesContainer">
-          
->>>>>>> origin
           <div className="notesHeader">
             <h3>Nos interesa tu opinión</h3>
             <h4>Déjanos tus comentarios</h4>
@@ -183,14 +134,13 @@ class App extends Component {
           {/* Acá irá el formulario */}
           <div className="notesFooter">
             <NoteForm addNote={this.addNote}/>
-            <Footer></Footer>
+            
           </div>
-<<<<<<< HEAD
+          <Footer></Footer>
 
       </div>
-=======
->>>>>>> origin
-      </div>
+    </div>
+    
     );
   }
 }
