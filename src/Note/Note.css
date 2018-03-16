@@ -1,6 +1,7 @@
 .Note {
     background-color: #FFF;
-    padding: 20px;
+    padding: 0.5em;;
     color: #000;
+    font-size: 0.7em;
     margin-top: 10px;
 }

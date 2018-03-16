@@ -1,5 +1,5 @@
 body {
-    background-color: #000;
+    background-color: #474646;
     text-align: center;
 }
 
@@ -12,16 +12,19 @@ body {
     margin-left: 30%;
 }
 .poleras{
-    margin-top: 5vh;
+    margin-top: 10vh;
 }
 .notesHeader, .notesBody, .notesFooter {
-    background-color: rgba(0,0,0,.5);
+    
     padding: 20;
     margin: 0 auto;
 }
 
 .notesHeader {
-    font-family: 'Lobster', cursive;
+    font-family: sans-serif;
+    background-color: #000;
+    width: 40%;
+    padding:0.01%;
 }
 
 .notesBody {
@@ -33,4 +36,17 @@ body {
     position: ;
     left: 0;
     width: 100%;
+}
+
+.navbar {
+    background-color: black;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+.navbar-brand {
+    text-decoration: none;
+    color: #FFF;
+    padding: 0.5em;
+    text-align: left;
 }
