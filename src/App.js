@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+
 
 //para conectar con base de  datos de firebase
 import firebase from 'firebase';
@@ -8,6 +8,10 @@ import 'firebase/database';
 
 import Note from './Note/Note';
 import NoteForm from './NoteForm/NoteForm';
+import Navbar from './Navbar';
+import Footer from './Footer';
+
+import './App.css';
 
 class App extends Component {
 
@@ -84,9 +88,10 @@ class App extends Component {
     return (
       // Nombre contenedor de todo el proyecto y las secciones del sitio
       <div className="notesContainer">
-        
+          <Navbar></Navbar>
           <div className="notesHeader">
-            <h1>React y Firebase App</h1>
+            <h3>Nos interesa tu opinión</h3>
+            <h4>Déjanos tus comentarios</h4>
           </div>
           {/* Cuerpo de la aplicacion */}
           <div className="notesBody">
@@ -110,6 +115,7 @@ class App extends Component {
           {/* Acá irá el formulario */}
           <div className="notesFooter">
             <NoteForm addNote={this.addNote}/>
+            <Footer></Footer>
           </div>
       </div>
     );
