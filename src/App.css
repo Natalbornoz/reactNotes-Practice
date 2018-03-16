@@ -1,8 +1,5 @@
 body {
-    background: #e1eec3;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: #FFF;
+    background-color: #474646;
     text-align: center;
 }
 
@@ -10,15 +7,23 @@ body {
     padding: 0;
     margin: 0;
 }
-
+.Note{
+    width: 40%;
+    margin-left: 30%;
+}
+.poleras{
+    margin-top: 10vh;
+}
 .notesHeader, .notesBody, .notesFooter {
-    background-color: rgba(0,0,0,.5);
     padding: 20;
     margin: 0 auto;
 }
 
 .notesHeader {
     font-family: sans-serif;
+    background-color: #000;
+    width: 40%;
+    padding:0.01%;
 }
 
 .notesBody {
@@ -27,7 +32,7 @@ body {
 
 .notesFooter {
     bottom: 0;
-    position: fixed;
+    position: ;
     left: 0;
     width: 100%;
 }
