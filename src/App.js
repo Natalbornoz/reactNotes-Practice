@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 
+//para conectar con base de  datos de firebase
+import firebase from 'firebase';
+import { DB_CONFIG } from './config/config';
+import 'firebase/database';
+
 import Note from './Note/Note';
 import NoteForm from './NoteForm/NoteForm';
 
@@ -12,29 +17,69 @@ class App extends Component {
     //Almacenará datos de nuestra aplicación
     this.state = {
       notes: [
-        {noteId: 1, noteContent: 'note 1'},
-        {noteId: 2, noteContent: 'note 2'}
+        // {noteId: 1, noteContent: 'note 1'},
+        // {noteId: 2, noteContent: 'note 2'}
       ]
     };
+
+    // inicializar aplicacion de firebase
+    this.app = firebase.initializeApp(DB_CONFIG);
+    //para almacenar o eliminar notas en la base de datos
+    //todos lo guardare dentro de una coleccion llamada 'notes'
+    this.db = this.app.database().ref().child('notes');
+
     this.addNote = this.addNote.bind(this);
+    this.removeNote = this.removeNote.bind(this);
   }
 
-  removeNote() {
+  //Componente que cargara los datos en mi estado acio
+  //y se ejecuta despues de qu el componente se ha cargado en mi pantalla
+  componentDidMount (){
+    //Quiero del estado, las notas
+    const { notes } = this.state;
+    //cuando se agrega un nuevo dato (se adiciona un nuevo hijo)
+    this.db.on('child_added', snap => {
+      notes.push({
+        noteId: snap.key,
+        noteContent: snap.val().noteContent
+      })
+    
+      this.setState({ notes });
+    });
 
+    this.db.on('child_removed', snap => {
+      for(let i= 0; i < notes.length; i++){
+        if (notes[i].noteId = snap.key) {
+          notes.splice(i, 1);
+        }
+      }
+      this.setState({notes});
+    });
   }
 
+
+  removeNote(noteId) {
+    this.db.child(noteId).remove();
+  }
+ 
   // para guardar notas
   addNote(note) {
     // obten las notas desde el estado
-    let { notes } = this.state;
-    notes.push({
-      noteId: notes.lenght + 1,
-      noteContent: note
-  });
-  // Para actualizar estado
-  this.setState({ notes });
+  //   let { notes } = this.state;
+  //   notes.push({
+  //     noteId: notes.lenght + 1,
+  //     noteContent: note
+  // });
+  // // Para actualizar estado
+  // this.setState({ notes });
+  
+  //le pasaremos el dato que estamos recibiendo
+  this.db.push().set({ noteContent: note });
 
 }
+
+  
+
   render() {
     return (
       // Nombre contenedor de todo el proyecto y las secciones del sitio
@@ -51,9 +96,10 @@ class App extends Component {
               this.state.notes.map(note => {
                 return (
                   <Note
-                  noteContent ={note.noteContent}
-                  noteId={note.noteId}
-                  key={note.noteId}
+                    noteContent ={note.noteContent}
+                    noteId={note.noteId}
+                    key={note.noteId}
+                    removeNote={this.removeNote}
                   />
                 )
               })
