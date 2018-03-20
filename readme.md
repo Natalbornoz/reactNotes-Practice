@@ -15,5 +15,6 @@ Está App esta desarrollada  con  :
     "react-scripts": "1.1.1",
     "redux": "^3.7.2"
  
+##
 
-!\[\](src/wireframe-01.jpg) 
+![](src/wireframe-01.jpg)

@@ -14,8 +14,6 @@ import ShoppingCart from './component/ShoppingCart';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-import './App.css';
-
 
 
 class App extends Component {
@@ -107,7 +105,9 @@ class App extends Component {
           </Row>
         </Grid> 
       </div> 
+
         <div className="notesContainer">
+
           <div className="notesHeader">
             <h3>Nos interesa tu opinión</h3>
             <h4>Déjanos tus comentarios</h4>
@@ -136,11 +136,11 @@ class App extends Component {
             <NoteForm addNote={this.addNote}/>
             
           </div>
-          <Footer></Footer>
 
       </div>
-    </div>
-    
+          <Footer></Footer>
+
+
     );
   }
 }
