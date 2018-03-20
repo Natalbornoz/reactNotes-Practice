@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 //para conectar con base de  datos de firebase
 import firebase from 'firebase';
 import { Grid, Row, Col } from 'react-bootstrap';
@@ -7,13 +8,14 @@ import 'firebase/database';
 
 import Note from './Note/Note';
 import NoteForm from './NoteForm/NoteForm';
+
 import ProductList from './component/ProductList';
 import ShoppingCart from './component/ShoppingCart';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
 
-import './App.css';
+
 class App extends Component {
 
   //Para poder mostrar notas en estado
@@ -88,6 +90,7 @@ class App extends Component {
   render() {
     return (
       // Nombre contenedor de todo el proyecto y las secciones del sitio
+
     <div className="contenedor">
       <Navbar></Navbar>
       <div className="poleras">
@@ -103,7 +106,8 @@ class App extends Component {
         </Grid> 
       </div> 
 
-      <div className="notesContainer">
+        <div className="notesContainer">
+
           <div className="notesHeader">
             <h3>Nos interesa tu opinión</h3>
             <h4>Déjanos tus comentarios</h4>
@@ -130,9 +134,13 @@ class App extends Component {
           {/* Acá irá el formulario */}
           <div className="notesFooter">
             <NoteForm addNote={this.addNote}/>
-            <Footer></Footer>
+            
           </div>
+
       </div>
+          <Footer></Footer>
+
+
     );
   }
 }
