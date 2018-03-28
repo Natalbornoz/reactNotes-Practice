@@ -1,5 +1,8 @@
-## E-COMMERCE
-Está App de e-commerce de poleras está realizada con el fin de satisfacer y agilizar la compra del cliente por internet.-
+## E-commerce
+Página web creada para comercializar poleras estampadas con serigrafía. El sitio muestra diferentes productos con su precio y un carrito de compra. Además existe una sección que es para dejar comentarios en tiempo real.
+
+
+![image](https://user-images.githubusercontent.com/30943727/38059367-8b8fae58-32bc-11e8-9090-92fede90df8c.png)
 
 
 
